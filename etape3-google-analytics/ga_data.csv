@@ -1,0 +1,14 @@
+# ----------------------------------------
+# Pages et écrans: Chemin de la page et classe de l'écran
+# Compte : ecommerce
+# Propriété : TechShop Local
+# ----------------------------------------
+# 
+# Tous les utilisateurs
+# Date de début : 20260113
+# Date de fin : 20260209
+Chemin de la page et classe de l'écran,Vues,Utilisateurs actifs,Vues par utilisateur actif,Durée d'engagement moyenne par utilisateur actif,Nombre d'événements,Événements clés,Revenu total
+/products.html,16,2,8,7,93,0,0
+/cart.html,12,2,6,22.5,242,0,0
+/index.html,4,2,2,2,25,0,0
+/,2,1,2,1,11,0,0

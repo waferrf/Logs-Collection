@@ -1,0 +1,31 @@
+{
+  "timestamp": "2026-02-11T15:58:16.045Z",
+  "event_type": "time_on_page",
+  "session_id": "session_1770799926277_yz9i99whd",
+  "page_url": "/products.html",
+  "page_title": "Produits - TechShop",
+  "referrer": "http://localhost:5000/index.html",
+  "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "screen_width": 1280,
+  "screen_height": 720,
+  "viewport_width": 1280,
+  "viewport_height": 593,
+  "seconds": 2245,
+  "server_received_at": "2026-02-11T16:58:16.363082",
+  "client_ip": "127.0.0.1"
+}\n{
+  "timestamp": "2026-02-11T15:59:16.041Z",
+  "event_type": "time_on_page",
+  "session_id": "session_1770799926277_yz9i99whd",
+  "page_url": "/products.html",
+  "page_title": "Produits - TechShop",
+  "referrer": "http://localhost:5000/index.html",
+  "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "screen_width": 1280,
+  "screen_height": 720,
+  "viewport_width": 1280,
+  "viewport_height": 593,
+  "seconds": 2305,
+  "server_received_at": "2026-02-11T16:59:16.048799",
+  "client_ip": "127.0.0.1"
+}

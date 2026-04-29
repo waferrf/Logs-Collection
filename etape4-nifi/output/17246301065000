@@ -1,0 +1,31 @@
+{
+  "timestamp": "2026-02-10T02:07:35.082Z",
+  "event_type": "time_on_page",
+  "session_id": "session_1770679558122_ddx65pm5t",
+  "page_url": "/cart.html",
+  "page_title": "Panier - TechShop",
+  "referrer": "http://localhost:5000/cart.html",
+  "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "screen_width": 1280,
+  "screen_height": 720,
+  "viewport_width": 1280,
+  "viewport_height": 593,
+  "seconds": 5513,
+  "server_received_at": "2026-02-10T03:07:35.399874",
+  "client_ip": "127.0.0.1"
+}\n{
+  "timestamp": "2026-02-10T02:08:35.087Z",
+  "event_type": "time_on_page",
+  "session_id": "session_1770679558122_ddx65pm5t",
+  "page_url": "/cart.html",
+  "page_title": "Panier - TechShop",
+  "referrer": "http://localhost:5000/cart.html",
+  "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "screen_width": 1280,
+  "screen_height": 720,
+  "viewport_width": 1280,
+  "viewport_height": 593,
+  "seconds": 5573,
+  "server_received_at": "2026-02-10T03:08:35.102531",
+  "client_ip": "127.0.0.1"
+}

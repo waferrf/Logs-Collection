@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-02-12T09:00:06.669Z",
+  "event_type": "scroll",
+  "session_id": "session_1770869375473_i67zh4iwg",
+  "page_url": "/products.html",
+  "page_title": "Produits - TechShop",
+  "referrer": "http://localhost:5000/cart.html",
+  "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "screen_width": 1280,
+  "screen_height": 720,
+  "viewport_width": 1280,
+  "viewport_height": 593,
+  "scroll_y": 1567.3333740234375,
+  "scroll_percent": 41,
+  "max_scroll_percent": 41,
+  "server_received_at": "2026-02-12T10:00:06.676062",
+  "client_ip": "127.0.0.1"
+}

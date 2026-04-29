@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-02-12T08:59:55.695Z",
+  "event_type": "custom_add_to_cart",
+  "session_id": "session_1770869375473_i67zh4iwg",
+  "page_url": "/index.html",
+  "page_title": "TechShop - Boutique Électronique",
+  "referrer": "http://localhost:5000/cart.html",
+  "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "screen_width": 1280,
+  "screen_height": 720,
+  "viewport_width": 1280,
+  "viewport_height": 593,
+  "product_id": 11,
+  "product_name": "Sony WH-1000XM5",
+  "product_price": 399,
+  "quantity": 1,
+  "server_received_at": "2026-02-12T09:59:55.990568",
+  "client_ip": "127.0.0.1"
+}

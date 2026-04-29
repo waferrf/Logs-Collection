@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-02-11T13:09:16.066Z",
+  "event_type": "time_on_page",
+  "session_id": "session_1770799926277_yz9i99whd",
+  "page_url": "/index.html",
+  "page_title": "TechShop - Boutique Électronique",
+  "referrer": "http://localhost:5000/cart.html",
+  "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "screen_width": 1280,
+  "screen_height": 720,
+  "viewport_width": 1280,
+  "viewport_height": 593,
+  "seconds": 6160,
+  "server_received_at": "2026-02-11T14:09:16.389526",
+  "client_ip": "127.0.0.1"
+}

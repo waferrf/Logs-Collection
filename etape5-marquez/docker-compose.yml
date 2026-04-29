@@ -1,0 +1,52 @@
+version: "3.7"
+services:
+  # 1. Base de données PostgreSQL - stocke les informations de lineage
+  db:
+    image: postgres:14
+    container_name: marquez-db
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_USER=marquez
+      - POSTGRES_PASSWORD=marquez
+      - POSTGRES_DB=marquez
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # 2. API Marquez - le cerveau qui reçoit et gère les données de lineage
+  api:
+    image: marquezproject/marquez:0.49.0
+    container_name: marquez-api
+    environment:
+      - MARQUEZ_PORT=5000
+      - MARQUEZ_ADMIN_PORT=5001
+      - POSTGRES_HOST=db
+      - POSTGRES_PORT=5432
+    ports:
+      - "5002:5000"
+      - "5003:5001"
+    links:
+      - "db:postgres"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # 3. Interface Web - pour visualiser le lineage graphiquement
+  web:
+    image: marquezproject/marquez-web:0.49.0
+    container_name: marquez-web
+    environment:
+      - MARQUEZ_HOST=api
+      - MARQUEZ_PORT=5000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
+
+volumes:
+  db-data:

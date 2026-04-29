@@ -1,0 +1,12 @@
+# ----------------------------------------
+# Acquisition de trafic: Groupe de canaux principal de la session (Groupe de canaux par défaut)
+# Compte : ecommerce
+# Propriété : TechShop Local
+# ----------------------------------------
+# 
+# Tous les utilisateurs
+# Date de début : 20260113
+# Date de fin : 20260209
+Groupe de canaux principal de la session (Groupe de canaux par défaut),Sessions,Sessions avec engagement,Taux d'engagement,Durée d'engagement moyenne par session,Événements par session,Nombre d'événements,Événements clés,Taux d'événements clés de la session,Revenu total
+Unassigned,2,0,0,31,175.5,351,0,0,0
+Direct,1,1,1,2,20,20,0,0,0

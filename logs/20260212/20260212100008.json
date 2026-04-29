@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-02-12T09:00:08.309Z",
+  "event_type": "click",
+  "session_id": "session_1770869375473_i67zh4iwg",
+  "page_url": "/products.html",
+  "page_title": "Produits - TechShop",
+  "referrer": "http://localhost:5000/cart.html",
+  "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "screen_width": 1280,
+  "screen_height": 720,
+  "viewport_width": 1280,
+  "viewport_height": 593,
+  "element_tag": "DIV",
+  "element_id": null,
+  "element_class": "product-card",
+  "element_text": "\n            💻\n            HP Pavilion\n            Ordinateur portable polyvalent pour tous les jou",
+  "x_position": 1040,
+  "y_position": 263,
+  "page_x": 1040,
+  "page_y": 1831,
+  "server_received_at": "2026-02-12T10:00:08.620812",
+  "client_ip": "127.0.0.1"
+}

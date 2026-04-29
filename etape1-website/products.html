@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produits - TechShop</title>
+    
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TV5M51M0CP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-TV5M51M0CP');
+    </script>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">🛒 TechShop</h1>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="products.html" class="nav-link active">Produits</a></li>
+                <li><a href="cart.html" class="nav-link">Panier <span id="cart-count" class="badge">0</span></a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Tous nos Produits</h1>
+            <p>Découvrez notre catalogue complet</p>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="filter-category">Catégorie:</label>
+                    <select id="filter-category">
+                        <option value="all">Toutes</option>
+                        <option value="smartphones">Smartphones</option>
+                        <option value="laptops">Ordinateurs</option>
+                        <option value="accessories">Accessoires</option>
+                        <option value="tablets">Tablettes</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="filter-price">Prix:</label>
+                    <select id="filter-price">
+                        <option value="all">Tous</option>
+                        <option value="0-500">Moins de 500€</option>
+                        <option value="500-1000">500€ - 1000€</option>
+                        <option value="1000-2000">1000€ - 2000€</option>
+                        <option value="2000+">Plus de 2000€</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="filter-sort">Trier par:</label>
+                    <select id="filter-sort">
+                        <option value="default">Par défaut</option>
+                        <option value="price-asc">Prix croissant</option>
+                        <option value="price-desc">Prix décroissant</option>
+                        <option value="name">Nom A-Z</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="container">
+            <div class="products-grid" id="all-products">
+                <!-- Les produits seront chargés par JavaScript -->
+            </div>
+            <div id="no-results" class="no-results" style="display: none;">
+                <p>Aucun produit trouvé avec ces critères.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>TechShop</h4>
+                    <p>Votre boutique de technologie de confiance depuis 2020</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Liens Rapides</h4>
+                    <ul>
+                        <li><a href="products.html">Tous les produits</a></li>
+                        <li><a href="cart.html">Mon panier</a></li>
+                        <li><a href="contact.html">Nous contacter</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Informations</h4>
+                    <ul>
+                        <li><a href="#" id="link-shipping">Livraison</a></li>
+                        <li><a href="#" id="link-returns">Retours</a></li>
+                        <li><a href="#" id="link-privacy">Confidentialité</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="footer-bottom">&copy; 2026 TechShop - Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <!-- Tracking Script -->
+    <script src="tracker.js"></script>
+    <script src="products-data.js"></script>
+    <script src="cart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-02-12T08:56:22.076Z",
+  "event_type": "custom_performance_metrics",
+  "session_id": "session_1770869375473_i67zh4iwg",
+  "page_url": "/cart.html",
+  "page_title": "Panier - TechShop",
+  "referrer": "http://localhost:5000/products.html",
+  "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "screen_width": 1280,
+  "screen_height": 720,
+  "viewport_width": 1280,
+  "viewport_height": 593,
+  "page_load_time_ms": 781,
+  "dom_ready_time_ms": 752,
+  "dns_time_ms": 0,
+  "tcp_time_ms": 315,
+  "server_received_at": "2026-02-12T09:56:22.394221",
+  "client_ip": "127.0.0.1"
+}

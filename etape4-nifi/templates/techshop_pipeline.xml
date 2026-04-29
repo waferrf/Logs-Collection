@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<template encoding-version="1.3">
+    <description>Pipeline de traitement des logs TechShop - Lit les logs JSON, extrait les données, et écrit dans output/</description>
+    <groupId>root</groupId>
+    <name>TechShop Logs Pipeline</name>
+    <snippet>
+        <processors>
+            <!-- ListFile - Scanner les fichiers de logs -->
+            <processor>
+                <id>listfile-001</id>
+                <name>1-ListFile (Scan Logs)</name>
+                <type>org.apache.nifi.processors.standard.ListFile</type>
+                <config>
+                    <properties>
+                        <entry>
+                            <key>Input Directory</key>
+                            <value>C:\Users\wafae\OneDrive\Bureau\projet python avancer\etape1-website\logs</value>
+                        </entry>
+                        <entry>
+                            <key>Recurse Subdirectories</key>
+                            <value>true</value>
+                        </entry>
+                        <entry>
+                            <key>File Filter</key>
+                            <value>.*\.json</value>
+                        </entry>
+                        <entry>
+                            <key>Minimum File Age</key>
+                            <value>0 sec</value>
+                        </entry>
+                    </properties>
+                    <schedulingPeriod>30 sec</schedulingPeriod>
+                    <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                </config>
+            </processor>
+            
+            <!-- FetchFile - Lire le contenu -->
+            <processor>
+                <id>fetchfile-001</id>
+                <name>2-FetchFile (Read Content)</name>
+                <type>org.apache.nifi.processors.standard.FetchFile</type>
+                <config>
+                    <properties>
+                        <entry>
+                            <key>File to Fetch</key>
+                            <value>${absolute.path}/${filename}</value>
+                        </entry>
+                        <entry>
+                            <key>Completion Strategy</key>
+                            <value>None</value>
+                        </entry>
+                    </properties>
+                </config>
+            </processor>
+            
+            <!-- EvaluateJsonPath - Extraire les données JSON -->
+            <processor>
+                <id>evaljson-001</id>
+                <name>3-EvaluateJsonPath (Extract Data)</name>
+                <type>org.apache.nifi.processors.standard.EvaluateJsonPath</type>
+                <config>
+                    <properties>
+                        <entry>
+                            <key>Destination</key>
+                            <value>flowfile-attribute</value>
+                        </entry>
+                        <entry>
+                            <key>Return Type</key>
+                            <value>json</value>
+                        </entry>
+                        <entry>
+                            <key>event_type</key>
+                            <value>$.event_type</value>
+                        </entry>
+                        <entry>
+                            <key>timestamp</key>
+                            <value>$.timestamp</value>
+                        </entry>
+                        <entry>
+                            <key>session_id</key>
+                            <value>$.session_id</value>
+                        </entry>
+                        <entry>
+                            <key>page_url</key>
+                            <value>$.page_url</value>
+                        </entry>
+                        <entry>
+                            <key>product_name</key>
+                            <value>$.product_name</value>
+                        </entry>
+                    </properties>
+                </config>
+            </processor>
+            
+            <!-- AttributesToJSON - Convertir en JSON -->
+            <processor>
+                <id>attr2json-001</id>
+                <name>4-AttributesToJSON (Create Output)</name>
+                <type>org.apache.nifi.processors.standard.AttributesToJSON</type>
+                <config>
+                    <properties>
+                        <entry>
+                            <key>Destination</key>
+                            <value>flowfile-content</value>
+                        </entry>
+                        <entry>
+                            <key>Include Core Attributes</key>
+                            <value>false</value>
+                        </entry>
+                    </properties>
+                </config>
+            </processor>
+            
+            <!-- PutFile - Écrire dans output -->
+            <processor>
+                <id>putfile-001</id>
+                <name>5-PutFile (Write to Output)</name>
+                <type>org.apache.nifi.processors.standard.PutFile</type>
+                <config>
+                    <properties>
+                        <entry>
+                            <key>Directory</key>
+                            <value>C:\Users\wafae\OneDrive\Bureau\projet python avancer\etape4-nifi\output</value>
+                        </entry>
+                        <entry>
+                            <key>Conflict Resolution Strategy</key>
+                            <value>replace</value>
+                        </entry>
+                        <entry>
+                            <key>Create Missing Directories</key>
+                            <value>true</value>
+                        </entry>
+                    </properties>
+                </config>
+            </processor>
+        </processors>
+        
+        <!-- Connexions entre processeurs -->
+        <connections>
+            <connection>
+                <id>conn-001</id>
+                <name>ListFile → FetchFile</name>
+                <sourceId>listfile-001</sourceId>
+                <destinationId>fetchfile-001</destinationId>
+                <selectedRelationships>
+                    <selectedRelationship>success</selectedRelationship>
+                </selectedRelationships>
+            </connection>
+            
+            <connection>
+                <id>conn-002</id>
+                <name>FetchFile → EvaluateJsonPath</name>
+                <sourceId>fetchfile-001</sourceId>
+                <destinationId>evaljson-001</destinationId>
+                <selectedRelationships>
+                    <selectedRelationship>success</selectedRelationship>
+                </selectedRelationships>
+            </connection>
+            
+            <connection>
+                <id>conn-003</id>
+                <name>EvaluateJsonPath → AttributesToJSON</name>
+                <sourceId>evaljson-001</sourceId>
+                <destinationId>attr2json-001</destinationId>
+                <selectedRelationships>
+                    <selectedRelationship>matched</selectedRelationship>
+                </selectedRelationships>
+            </connection>
+            
+            <connection>
+                <id>conn-004</id>
+                <name>AttributesToJSON → PutFile</name>
+                <sourceId>attr2json-001</sourceId>
+                <destinationId>putfile-001</destinationId>
+                <selectedRelationships>
+                    <selectedRelationship>success</selectedRelationship>
+                </selectedRelationships>
+            </connection>
+        </connections>
+    </snippet>
+    <timestamp>2026-02-10T00:00:00Z</timestamp>
+</template>

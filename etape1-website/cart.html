@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panier - TechShop</title>
+    
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TV5M51M0CP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-TV5M51M0CP');
+    </script>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">🛒 TechShop</h1>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="products.html" class="nav-link">Produits</a></li>
+                <li><a href="cart.html" class="nav-link active">Panier <span id="cart-count" class="badge">0</span></a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Mon Panier</h1>
+            <p>Vérifiez vos articles avant de passer commande</p>
+        </div>
+    </section>
+
+    <!-- Cart Section -->
+    <section class="cart-section">
+        <div class="container">
+            <div class="cart-layout">
+                <!-- Cart Items -->
+                <div class="cart-items">
+                    <div id="cart-items-container">
+                        <!-- Les articles seront chargés par JavaScript -->
+                    </div>
+                    <div id="empty-cart" style="display: none;">
+                        <div class="empty-cart-message">
+                            <span class="icon">🛒</span>
+                            <h3>Votre panier est vide</h3>
+                            <p>Découvrez nos produits et ajoutez-les à votre panier</p>
+                            <a href="products.html" class="btn btn-primary">Voir les produits</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cart Summary -->
+                <div class="cart-summary" id="cart-summary-container">
+                    <h3>Résumé de la commande</h3>
+                    <div class="summary-row">
+                        <span>Sous-total:</span>
+                        <span id="cart-subtotal">0,00 €</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Livraison:</span>
+                        <span id="cart-shipping">Gratuite</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>TVA (20%):</span>
+                        <span id="cart-tax">0,00 €</span>
+                    </div>
+                    <hr>
+                    <div class="summary-row total">
+                        <span><strong>Total:</strong></span>
+                        <span id="cart-total"><strong>0,00 €</strong></span>
+                    </div>
+                    
+                    <button id="btn-checkout" class="btn btn-primary btn-block">
+                        Passer la commande
+                    </button>
+                    
+                    <a href="products.html" class="btn btn-secondary btn-block">
+                        Continuer mes achats
+                    </a>
+
+                    <!-- Promo Code -->
+                    <div class="promo-code-section">
+                        <h4>Code promo</h4>
+                        <div class="promo-input-group">
+                            <input type="text" id="promo-code" placeholder="Entrez votre code">
+                            <button id="btn-apply-promo" class="btn btn-secondary">Appliquer</button>
+                        </div>
+                        <div id="promo-message" class="message"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Checkout Modal -->
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Finaliser ma commande</h2>
+            
+            <form id="checkout-form">
+                <h3>Informations de livraison</h3>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="checkout-firstname">Prénom *</label>
+                        <input type="text" id="checkout-firstname" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkout-lastname">Nom *</label>
+                        <input type="text" id="checkout-lastname" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="checkout-email">Email *</label>
+                    <input type="email" id="checkout-email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="checkout-phone">Téléphone *</label>
+                    <input type="tel" id="checkout-phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="checkout-address">Adresse *</label>
+                    <input type="text" id="checkout-address" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="checkout-city">Ville *</label>
+                        <input type="text" id="checkout-city" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkout-zip">Code postal *</label>
+                        <input type="text" id="checkout-zip" required>
+                    </div>
+                </div>
+
+                <h3>Mode de paiement</h3>
+                <div class="payment-methods">
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="card" checked>
+                        <span>💳 Carte bancaire</span>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="paypal">
+                        <span>💰 PayPal</span>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="transfer">
+                        <span>🏦 Virement bancaire</span>
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="checkout-terms" required>
+                        J'accepte les <a href="#" id="link-terms">conditions générales de vente</a>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">
+                    Confirmer la commande
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>TechShop</h4>
+                    <p>Votre boutique de technologie de confiance depuis 2020</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Liens Rapides</h4>
+                    <ul>
+                        <li><a href="products.html">Tous les produits</a></li>
+                        <li><a href="cart.html">Mon panier</a></li>
+                        <li><a href="contact.html">Nous contacter</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Informations</h4>
+                    <ul>
+                        <li><a href="#" id="link-shipping">Livraison</a></li>
+                        <li><a href="#" id="link-returns">Retours</a></li>
+                        <li><a href="#" id="link-privacy">Confidentialité</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="footer-bottom">&copy; 2026 TechShop - Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <!-- Tracking Script -->
+    <script src="tracker.js"></script>
+    <script src="products-data.js"></script>
+    <script src="cart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
